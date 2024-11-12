@@ -2,10 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  font-family: Arial, Helvetica, sans-serif;
-}
-
 @layer utilities {
   .text-balance {
     text-wrap: balance;
@@ -13,67 +9,170 @@ body {
 }
 
 @layer base {
-  :root {
-    --background: 0 0% 100%;
-    --foreground: 240 10% 3.9%;
-    --card: 0 0% 100%;
-    --card-foreground: 240 10% 3.9%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 240 10% 3.9%;
-    --primary: 240 5.9% 10%;
-    --primary-foreground: 0 0% 98%;
-    --secondary: 240 4.8% 95.9%;
-    --secondary-foreground: 240 5.9% 10%;
-    --muted: 240 4.8% 95.9%;
-    --muted-foreground: 240 3.8% 46.1%;
-    --accent: 240 4.8% 95.9%;
-    --accent-foreground: 240 5.9% 10%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 240 5.9% 90%;
-    --input: 240 5.9% 90%;
-    --ring: 240 10% 3.9%;
-    --chart-1: 12 76% 61%;
-    --chart-2: 173 58% 39%;
-    --chart-3: 197 37% 24%;
-    --chart-4: 43 74% 66%;
-    --chart-5: 27 87% 67%;
-    --radius: 0.5rem;
-  }
-  .dark {
-    --background: 240 10% 3.9%;
-    --foreground: 0 0% 98%;
-    --card: 240 10% 3.9%;
-    --card-foreground: 0 0% 98%;
-    --popover: 240 10% 3.9%;
-    --popover-foreground: 0 0% 98%;
-    --primary: 0 0% 98%;
-    --primary-foreground: 240 5.9% 10%;
-    --secondary: 240 3.7% 15.9%;
-    --secondary-foreground: 0 0% 98%;
-    --muted: 240 3.7% 15.9%;
-    --muted-foreground: 240 5% 64.9%;
-    --accent: 240 3.7% 15.9%;
-    --accent-foreground: 0 0% 98%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 240 3.7% 15.9%;
-    --input: 240 3.7% 15.9%;
-    --ring: 240 4.9% 83.9%;
-    --chart-1: 220 70% 50%;
-    --chart-2: 160 60% 45%;
-    --chart-3: 30 80% 55%;
-    --chart-4: 280 65% 60%;
-    --chart-5: 340 75% 55%;
-  }
+
+  :root,
+  .latte {
+      /* Base colors */
+      --background: 230 100% 97%;
+      /* Lighter, more pure white background */
+      --foreground: 234 16% 35%;
+      --card: 233 100% 96%;
+      --card-foreground: 234 16% 35%;
+      --muted: 233 10% 90%;
+      --muted-foreground: 234 13% 60%;
+  
+      /* Brand colors */
+      --primary: 238 82% 67%;
+      /* Lavender */
+      --primary-foreground: 233 100% 97%;
+      --secondary: 157 73% 82%;
+      /* Green */
+      --secondary-foreground: 233 100% 97%;
+      --accent: 22 99% 77%;
+      /* Peach */
+      --accent-foreground: 233 100% 97%;
+  
+      /* System colors */
+      --destructive: 343 81% 75%;
+      --destructive-foreground: 233 100% 97%;
+      --border: 233 10% 90%;
+      --input: 233 10% 90%;
+      --ring: 238 82% 67%;
+  
+      /* Editor colors */
+      --editor-bg: 230 100% 97%;
+      --editor-fg: 234 16% 35%;
+      --editor-line: 234 13% 60%;
+      --editor-selection: 238 82% 67%;
+      --editor-cursor: 234 16% 35%;
+      --radius: 0.5rem;
+    }
+  
+    .frappe {
+      /* Base colors */
+      --background: 229 23% 22%;
+      /* Slightly lighter than Macchiato */
+      --foreground: 227 70% 87%;
+      --card: 229 23% 20%;
+      --card-foreground: 227 70% 87%;
+      --muted: 232 19% 24%;
+      --muted-foreground: 228 57% 73%;
+  
+      /* Brand colors */
+      --primary: 234 82% 77%;
+      /* Lavender */
+      --primary-foreground: 229 23% 22%;
+      --secondary: 156 64% 67%;
+      /* Green */
+      --secondary-foreground: 229 23% 22%;
+      --accent: 21 86% 73%;
+      /* Peach */
+      --accent-foreground: 229 23% 22%;
+  
+      /* System colors */
+      --destructive: 343 81% 75%;
+      --destructive-foreground: 229 23% 22%;
+      --border: 232 19% 24%;
+      --input: 232 19% 24%;
+      --ring: 234 82% 77%;
+  
+      /* Editor colors */
+      --editor-bg: 229 23% 22%;
+      --editor-fg: 227 70% 87%;
+      --editor-line: 228 57% 73%;
+      --editor-selection: 234 82% 77%;
+      --editor-cursor: 227 70% 87%;
+      --radius: 0.5rem;
+    }
+  
+    .macchiato {
+      /* Base colors */
+      --background: 232 23% 18%;
+      /* Darker than Frappe */
+      --foreground: 227 70% 87%;
+      --card: 232 23% 16%;
+      --card-foreground: 227 70% 87%;
+      --muted: 234 19% 23%;
+      --muted-foreground: 228 57% 73%;
+  
+      /* Brand colors */
+      --primary: 232 97% 85%;
+      /* Lavender */
+      --primary-foreground: 232 23% 18%;
+      --secondary: 152 76% 80%;
+      /* Green */
+      --secondary-foreground: 232 23% 18%;
+      --accent: 23 92% 75%;
+      /* Peach */
+      --accent-foreground: 232 23% 18%;
+  
+      /* System colors */
+      --destructive: 343 81% 75%;
+      --destructive-foreground: 232 23% 18%;
+      --border: 234 19% 23%;
+      --input: 234 19% 23%;
+      --ring: 232 97% 85%;
+  
+      /* Editor colors */
+      --editor-bg: 232 23% 18%;
+      --editor-fg: 227 70% 87%;
+      --editor-line: 228 57% 73%;
+      --editor-selection: 232 97% 85%;
+      --editor-cursor: 227 70% 87%;
+      --radius: 0.5rem;
+    }
+  
+    .mocha {
+      /* Base colors */
+      --background: 234 23% 15%;
+      /* Darkest variant */
+      --foreground: 226 70% 88%;
+      --card: 234 23% 13%;
+      --card-foreground: 226 70% 88%;
+      --muted: 237 19% 22%;
+      --muted-foreground: 227 57% 74%;
+  
+      /* Brand colors */
+      --primary: 227 100% 87%;
+      /* Lavender */
+      --primary-foreground: 234 23% 15%;
+      --secondary: 148 83% 85%;
+      /* Green */
+      --secondary-foreground: 234 23% 15%;
+      --accent: 25 95% 77%;
+      /* Peach */
+      --accent-foreground: 234 23% 15%;
+  
+      /* System colors */
+      --destructive: 343 81% 75%;
+      --destructive-foreground: 234 23% 15%;
+      --border: 237 19% 22%;
+      --input: 237 19% 22%;
+      --ring: 227 100% 87%;
+  
+      /* Editor colors */
+      --editor-bg: 234 23% 15%;
+      --editor-fg: 226 70% 88%;
+      --editor-line: 227 57% 74%;
+      --editor-selection: 227 100% 87%;
+      --editor-cursor: 226 70% 88%;
+      --radius: 0.5rem;
+    }
 }
 
 @layer base {
   * {
     @apply border-border;
   }
+
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
   }
 }
 
@@ -111,4 +210,87 @@ body {
 
 .prose p {
   @apply mb-4;
+}
+
+/* Monaco Editor Styles */
+.monaco-editor .margin {
+  background-color: transparent !important;
+  border-right: none !important;
+}
+
+.monaco-editor .line-numbers {
+  color: hsl(var(--muted-foreground)) !important;
+  font-size: 12px !important;
+}
+
+.monaco-editor .line-numbers-border {
+  display: none !important;
+}
+
+.monaco-editor .current-line {
+  background-color: hsl(var(--muted) / 0.3) !important;
+  border: none !important;
+}
+
+.monaco-editor .cursor {
+  background-color: hsl(var(--foreground)) !important;
+  border-color: hsl(var(--foreground)) !important;
+}
+
+.monaco-editor .selected-text {
+  background-color: hsl(var(--primary) / 0.2) !important;
+}
+
+.monaco-editor .monaco-editor-background {
+  /* background-color: hsl(var(--background)) !important; */
+}
+
+/* Editor decorations */
+.errorLineDecoration {
+  background-color: hsl(var(--destructive) / 0.1);
+  margin-left: 3px;
+}
+
+.errorGlyphMargin {
+  background-color: hsl(var(--destructive) / 0.3);
+}
+
+/* Theme transition */
+* {
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+}
+
+/* Scrollbar customization */
+.monaco-editor .scrollbar {
+  opacity: 0 !important;
+}
+
+/* Remove editor borders */
+.monaco-editor .monaco-editor-background,
+.monaco-editor .margin-view-overlays,
+.monaco-editor .margin {
+  border: none !important;
+}
+
+/* Feedback panel transitions */
+.feedback-panel-enter {
+  transform: translateY(100%);
+  opacity: 0;
+}
+
+.feedback-panel-enter-active {
+  transform: translateY(0);
+  opacity: 1;
+  transition: all 300ms ease-in-out;
+}
+
+.feedback-panel-exit {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.feedback-panel-exit-active {
+  transform: translateY(100%);
+  opacity: 0;
+  transition: all 300ms ease-in-out;
 }

@@ -1,0 +1,92 @@
+/* styles/themes.css */
+:root {
+  --radius: 0.5rem;
+}
+
+.latte {
+  --background: var(--ctp-latte-base);
+  --foreground: var(--ctp-latte-text);
+  --card: var(--ctp-latte-crust);
+  --card-foreground: var(--ctp-latte-text);
+  --popover: var(--ctp-latte-base);
+  --popover-foreground: var(--ctp-latte-text);
+  --primary: var(--ctp-latte-blue);
+  --primary-foreground: var(--ctp-latte-base);
+  --secondary: var(--ctp-latte-surface0);
+  --secondary-foreground: var(--ctp-latte-text);
+  --muted: var(--ctp-latte-surface0);
+  --muted-foreground: var(--ctp-latte-subtext0);
+  --accent: var(--ctp-latte-surface0);
+  --accent-foreground: var(--ctp-latte-text);
+  --destructive: var(--ctp-latte-red);
+  --destructive-foreground: var(--ctp-latte-base);
+  --border: var(--ctp-latte-surface0);
+  --input: var(--ctp-latte-surface0);
+  --ring: var(--ctp-latte-blue);
+}
+
+.frappe {
+  --background: var(--ctp-frappe-base);
+  --foreground: var(--ctp-frappe-text);
+  --card: var(--ctp-frappe-crust);
+  --card-foreground: var(--ctp-frappe-text);
+  --popover: var(--ctp-frappe-base);
+  --popover-foreground: var(--ctp-frappe-text);
+  --primary: var(--ctp-frappe-blue);
+  --primary-foreground: var(--ctp-frappe-base);
+  --secondary: var(--ctp-frappe-surface0);
+  --secondary-foreground: var(--ctp-frappe-text);
+  --muted: var(--ctp-frappe-surface0);
+  --muted-foreground: var(--ctp-frappe-subtext0);
+  --accent: var(--ctp-frappe-surface0);
+  --accent-foreground: var(--ctp-frappe-text);
+  --destructive: var(--ctp-frappe-red);
+  --destructive-foreground: var(--ctp-frappe-base);
+  --border: var(--ctp-frappe-surface0);
+  --input: var(--ctp-frappe-surface0);
+  --ring: var(--ctp-frappe-blue);
+}
+
+.macchiato {
+  --background: var(--ctp-macchiato-base);
+  --foreground: var(--ctp-macchiato-text);
+  --card: var(--ctp-macchiato-crust);
+  --card-foreground: var(--ctp-macchiato-text);
+  --popover: var(--ctp-macchiato-base);
+  --popover-foreground: var(--ctp-macchiato-text);
+  --primary: var(--ctp-macchiato-blue);
+  --primary-foreground: var(--ctp-macchiato-base);
+  --secondary: var(--ctp-macchiato-surface0);
+  --secondary-foreground: var(--ctp-macchiato-text);
+  --muted: var(--ctp-macchiato-surface0);
+  --muted-foreground: var(--ctp-macchiato-subtext0);
+  --accent: var(--ctp-macchiato-surface0);
+  --accent-foreground: var(--ctp-macchiato-text);
+  --destructive: var(--ctp-macchiato-red);
+  --destructive-foreground: var(--ctp-macchiato-base);
+  --border: var(--ctp-macchiato-surface0);
+  --input: var(--ctp-macchiato-surface0);
+  --ring: var(--ctp-macchiato-blue);
+}
+
+.mocha {
+  --background: var(--ctp-mocha-base);
+  --foreground: var(--ctp-mocha-text);
+  --card: var(--ctp-mocha-crust);
+  --card-foreground: var(--ctp-mocha-text);
+  --popover: var(--ctp-mocha-base);
+  --popover-foreground: var(--ctp-mocha-text);
+  --primary: var(--ctp-mocha-blue);
+  --primary-foreground: var(--ctp-mocha-base);
+  --secondary: var(--ctp-mocha-surface0);
+  --secondary-foreground: var(--ctp-mocha-text);
+  --muted: var(--ctp-mocha-surface0);
+  --muted-foreground: var(--ctp-mocha-subtext0);
+  --accent: var(--ctp-mocha-surface0);
+  --accent-foreground: var(--ctp-mocha-text);
+  --destructive: var(--ctp-mocha-red);
+  --destructive-foreground: var(--ctp-mocha-base);
+  --border: var(--ctp-mocha-surface0);
+  --input: var(--ctp-mocha-surface0);
+  --ring: var(--ctp-mocha-blue);
+}

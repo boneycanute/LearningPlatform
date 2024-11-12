@@ -1,10 +1,11 @@
 // app/layout.tsx
-import Navigation from '@/components/Navigation';
-import { Inter } from 'next/font/google';
-import './globals.css';
+import Navigation from "@/components/Navigation";
+import { Inter } from "next/font/google";
+import "./globals.css";
 import { Toaster } from "@/components/ui/sonner";
+import { ThemeProvider } from "@/components/providers/ThemeProvider";
 
-const inter = Inter({ subsets: ['latin'] });
+const inter = Inter({ subsets: ["latin"] });
 
 export default function RootLayout({
   children,
@@ -14,9 +15,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <Navigation />
-        <main>{children}</main>
-        <Toaster />
+        <ThemeProvider>
+          <div className="min-h-screen">
+            <Navigation />
+            <main>{children}</main>
+            <Toaster position="top-right" />
+          </div>
+        </ThemeProvider>
       </body>
     </html>
   );

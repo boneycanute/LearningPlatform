@@ -5,6 +5,7 @@ import React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Button } from "@/components/ui/button";
+import { ThemeToggle } from "./ThemeToggle";
 
 const Navigation = () => {
   const pathname = usePathname();
@@ -26,6 +27,7 @@ const Navigation = () => {
           <Button variant="outline" asChild>
             <Link href="/courses">Courses</Link>
           </Button>
+          <ThemeToggle />
         </div>
       </div>
     </nav>
