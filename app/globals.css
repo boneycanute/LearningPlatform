@@ -9,155 +9,152 @@
 }
 
 @layer base {
-
   :root,
+  .mocha {
+    /* Base colors - matching our current dark theme */
+    --background: 234 25% 13.73%; /* #1c1c2b */
+    --foreground: 226 70% 88%;
+    --card: 234 25% 12%; /* Slightly darker than background */
+    --card-foreground: 226 70% 88%;
+    --muted: 237 19% 22%;
+    --muted-foreground: 227 57% 74%;
+
+    /* Brand colors */
+    --primary: 317 33% 83%; /* #f5c2e7 (pink) */
+    --primary-foreground: 234 25% 14%;
+    --secondary: 152 55% 76%; /* #a6e3a1 (green) */
+    --secondary-foreground: 234 25% 14%;
+    --accent: 23 92% 75%; /* #fab387 (peach) */
+    --accent-foreground: 234 25% 14%;
+
+    /* System colors */
+    --destructive: 343 81% 75%;
+    --destructive-foreground: 234 25% 14%;
+    --border: 237 19% 22%;
+    --input: 237 19% 22%;
+    --ring: 267 84% 81%; /* #cba6f7 (lavender) */
+
+    /* Editor colors */
+    --editor-bg: 234 25% 14%;
+    --editor-fg: 226 70% 88%;
+    --editor-line: 227 57% 74%;
+    --editor-selection: 267 84% 81%;
+    --editor-cursor: 226 70% 88%;
+    --radius: 0.5rem;
+  }
+
+  .macchiato {
+    /* A bit lighter than mocha */
+    --background: 234 23% 18%;
+    --foreground: 227 70% 87%;
+    --card: 234 23% 16%;
+    --card-foreground: 227 70% 87%;
+    --muted: 234 19% 23%;
+    --muted-foreground: 228 57% 73%;
+
+    /* Brand colors - slightly adjusted for this theme */
+    --primary: 317 33% 83%; /* #f5c2e7 */
+    --primary-foreground: 234 23% 18%;
+    --secondary: 152 55% 76%; /* #a6e3a1 */
+    --secondary-foreground: 234 23% 18%;
+    --accent: 23 92% 75%; /* #fab387 */
+    --accent-foreground: 234 23% 18%;
+
+    /* System colors */
+    --destructive: 343 81% 75%;
+    --destructive-foreground: 234 23% 18%;
+    --border: 234 19% 23%;
+    --input: 234 19% 23%;
+    --ring: 267 84% 81%; /* #cba6f7 */
+
+    /* Editor colors */
+    --editor-bg: 234 23% 18%;
+    --editor-fg: 227 70% 87%;
+    --editor-line: 228 57% 73%;
+    --editor-selection: 267 84% 81%;
+    --editor-cursor: 227 70% 87%;
+    --radius: 0.5rem;
+  }
+
+  .frappe {
+    /* Lighter theme */
+    --background: 229 23% 22%;
+    --foreground: 227 70% 87%;
+    --card: 229 23% 20%;
+    --card-foreground: 227 70% 87%;
+    --muted: 232 19% 24%;
+    --muted-foreground: 228 57% 73%;
+
+    /* Brand colors - slightly lightened */
+    --primary: 317 33% 83%; /* #f5c2e7 */
+    --primary-foreground: 229 23% 22%;
+    --secondary: 152 55% 76%; /* #a6e3a1 */
+    --secondary-foreground: 229 23% 22%;
+    --accent: 23 92% 75%; /* #fab387 */
+    --accent-foreground: 229 23% 22%;
+
+    /* System colors */
+    --destructive: 343 81% 75%;
+    --destructive-foreground: 229 23% 22%;
+    --border: 232 19% 24%;
+    --input: 232 19% 24%;
+    --ring: 267 84% 81%; /* #cba6f7 */
+
+    /* Editor colors */
+    --editor-bg: 229 23% 22%;
+    --editor-fg: 227 70% 87%;
+    --editor-line: 228 57% 73%;
+    --editor-selection: 267 84% 81%;
+    --editor-cursor: 227 70% 87%;
+    --radius: 0.5rem;
+  }
+
   .latte {
-      /* Base colors */
-      --background: 230 100% 97%;
-      /* Lighter, more pure white background */
-      --foreground: 234 16% 35%;
-      --card: 233 100% 96%;
-      --card-foreground: 234 16% 35%;
-      --muted: 233 10% 90%;
-      --muted-foreground: 234 13% 60%;
-  
-      /* Brand colors */
-      --primary: 238 82% 67%;
-      /* Lavender */
-      --primary-foreground: 233 100% 97%;
-      --secondary: 157 73% 82%;
-      /* Green */
-      --secondary-foreground: 233 100% 97%;
-      --accent: 22 99% 77%;
-      /* Peach */
-      --accent-foreground: 233 100% 97%;
-  
-      /* System colors */
-      --destructive: 343 81% 75%;
-      --destructive-foreground: 233 100% 97%;
-      --border: 233 10% 90%;
-      --input: 233 10% 90%;
-      --ring: 238 82% 67%;
-  
-      /* Editor colors */
-      --editor-bg: 230 100% 97%;
-      --editor-fg: 234 16% 35%;
-      --editor-line: 234 13% 60%;
-      --editor-selection: 238 82% 67%;
-      --editor-cursor: 234 16% 35%;
-      --radius: 0.5rem;
-    }
-  
-    .frappe {
-      /* Base colors */
-      --background: 229 23% 22%;
-      /* Slightly lighter than Macchiato */
-      --foreground: 227 70% 87%;
-      --card: 229 23% 20%;
-      --card-foreground: 227 70% 87%;
-      --muted: 232 19% 24%;
-      --muted-foreground: 228 57% 73%;
-  
-      /* Brand colors */
-      --primary: 234 82% 77%;
-      /* Lavender */
-      --primary-foreground: 229 23% 22%;
-      --secondary: 156 64% 67%;
-      /* Green */
-      --secondary-foreground: 229 23% 22%;
-      --accent: 21 86% 73%;
-      /* Peach */
-      --accent-foreground: 229 23% 22%;
-  
-      /* System colors */
-      --destructive: 343 81% 75%;
-      --destructive-foreground: 229 23% 22%;
-      --border: 232 19% 24%;
-      --input: 232 19% 24%;
-      --ring: 234 82% 77%;
-  
-      /* Editor colors */
-      --editor-bg: 229 23% 22%;
-      --editor-fg: 227 70% 87%;
-      --editor-line: 228 57% 73%;
-      --editor-selection: 234 82% 77%;
-      --editor-cursor: 227 70% 87%;
-      --radius: 0.5rem;
-    }
-  
-    .macchiato {
-      /* Base colors */
-      --background: 232 23% 18%;
-      /* Darker than Frappe */
-      --foreground: 227 70% 87%;
-      --card: 232 23% 16%;
-      --card-foreground: 227 70% 87%;
-      --muted: 234 19% 23%;
-      --muted-foreground: 228 57% 73%;
-  
-      /* Brand colors */
-      --primary: 232 97% 85%;
-      /* Lavender */
-      --primary-foreground: 232 23% 18%;
-      --secondary: 152 76% 80%;
-      /* Green */
-      --secondary-foreground: 232 23% 18%;
-      --accent: 23 92% 75%;
-      /* Peach */
-      --accent-foreground: 232 23% 18%;
-  
-      /* System colors */
-      --destructive: 343 81% 75%;
-      --destructive-foreground: 232 23% 18%;
-      --border: 234 19% 23%;
-      --input: 234 19% 23%;
-      --ring: 232 97% 85%;
-  
-      /* Editor colors */
-      --editor-bg: 232 23% 18%;
-      --editor-fg: 227 70% 87%;
-      --editor-line: 228 57% 73%;
-      --editor-selection: 232 97% 85%;
-      --editor-cursor: 227 70% 87%;
-      --radius: 0.5rem;
-    }
-  
-    .mocha {
-      /* Base colors */
-      --background: 234 23% 15%;
-      /* Darkest variant */
-      --foreground: 226 70% 88%;
-      --card: 234 23% 13%;
-      --card-foreground: 226 70% 88%;
-      --muted: 237 19% 22%;
-      --muted-foreground: 227 57% 74%;
-  
-      /* Brand colors */
-      --primary: 227 100% 87%;
-      /* Lavender */
-      --primary-foreground: 234 23% 15%;
-      --secondary: 148 83% 85%;
-      /* Green */
-      --secondary-foreground: 234 23% 15%;
-      --accent: 25 95% 77%;
-      /* Peach */
-      --accent-foreground: 234 23% 15%;
-  
-      /* System colors */
-      --destructive: 343 81% 75%;
-      --destructive-foreground: 234 23% 15%;
-      --border: 237 19% 22%;
-      --input: 237 19% 22%;
-      --ring: 227 100% 87%;
-  
-      /* Editor colors */
-      --editor-bg: 234 23% 15%;
-      --editor-fg: 226 70% 88%;
-      --editor-line: 227 57% 74%;
-      --editor-selection: 227 100% 87%;
-      --editor-cursor: 226 70% 88%;
-      --radius: 0.5rem;
-    }
+    /* Light theme */
+    --background: 230 100% 97%;
+    --foreground: 234 16% 35%;
+    --card: 233 100% 96%;
+    --card-foreground: 234 16% 35%;
+    --muted: 233 10% 90%;
+    --muted-foreground: 234 13% 60%;
+
+    /* Brand colors - adjusted for light theme */
+    --primary: 317 33% 83%; /* #f5c2e7 but darker */
+    --primary-foreground: 233 100% 97%;
+    --secondary: 152 55% 76%; /* #a6e3a1 but darker */
+    --secondary-foreground: 233 100% 97%;
+    --accent: 23 92% 75%; /* #fab387 but darker */
+    --accent-foreground: 233 100% 97%;
+
+    /* System colors */
+    --destructive: 343 81% 75%;
+    --destructive-foreground: 233 100% 97%;
+    --border: 233 10% 90%;
+    --input: 233 10% 90%;
+    --ring: 267 84% 81%; /* #cba6f7 but darker */
+
+    /* Editor colors */
+    --editor-bg: 230 100% 97%;
+    --editor-fg: 234 16% 35%;
+    --editor-line: 234 13% 60%;
+    --editor-selection: 267 84% 81%;
+    --editor-cursor: 234 16% 35%;
+    --radius: 0.5rem;
+  }
+  :root {
+    --color-1: 0 100% 63%;
+    --color-2: 270 100% 63%;
+    --color-3: 210 100% 63%;
+    --color-4: 195 100% 63%;
+    --color-5: 90 100% 63%;
+  }
+  .dark {
+    --color-1: 0 100% 63%;
+    --color-2: 270 100% 63%;
+    --color-3: 210 100% 63%;
+    --color-4: 195 100% 63%;
+    --color-5: 90 100% 63%;
+  }
 }
 
 @layer base {
@@ -257,7 +254,8 @@
 
 /* Theme transition */
 * {
-  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out,
+    border-color 0.2s ease-in-out;
 }
 
 /* Scrollbar customization */
