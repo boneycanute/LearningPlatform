@@ -68,7 +68,7 @@ export const AnimatedCat = () => {
       duration: 2,
       ease: "easeInOut",
       repeat: Infinity,
-      repeatType: "mirror",
+      repeatType: "mirror" as const,
     },
   };
 
