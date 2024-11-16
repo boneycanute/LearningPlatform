@@ -19,7 +19,6 @@ export const WelcomeSection = ({ onAuthClick }: WelcomeSectionProps) => (
         "Join the Paw-some Coding Revolution!",
       ]}
       className="text-5xl md:text-7xl font-bold leading-tight bg-gradient-to-r from-[#fab387] to-[#f5c2e7] bg-clip-text text-transparent py-1"
-      interval={2000}
     />
     <div className="text-2xl text-slate-300 font-semibold">
       Paws and learn – start your journey with decentralized skills!
