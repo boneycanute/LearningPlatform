@@ -7,6 +7,7 @@ import { CatPawLogo } from "@/components/logo/CatPawLogo";
 import { AuthSection } from "@/components/auth/AuthSection";
 import { WelcomeSection } from "@/components/landing/WelcomeSection";
 import { AnimatedCat } from "@/components/cat/AnimatedCat";
+import { UserButton } from "@clerk/nextjs"; // Import Clerk.js UserButton component
 
 const clerkAppearance = {
   layout: {
@@ -18,9 +19,9 @@ const clerkAppearance = {
     socialButtonsPlacement: "bottom",
     socialButtonsVariant: "blockButton",
     termsPageUrl: "",
-    redirectUrl: "/", // Keeps users on the landing page
-    afterSignInUrl: "/", // After sign in, stay on page
-    afterSignUpUrl: "/", // After sign up, stay on page
+    redirectUrl: "/dashboard", // Redirect to dashboard after sign-in/sign-up
+    afterSignInUrl: "/dashboard", // After sign in, stay on page
+    afterSignUpUrl: "/dashboard", // After sign up, stay on page
   },
   elements: {
     card: "bg-[#1c1c2b] border-0 shadow-none",
@@ -65,21 +66,19 @@ export default function LandingPage() {
     <div className="min-h-screen bg-[#1c1c2b] text-white flex flex-col">
       <div className="h-screen flex flex-col">
         {/* Navbar */}
-        <nav className="fixed top-0 left-0 right-0 bg-[#1c1c2b] z-50">
-          <div className="pl-6">
-            {" "}
-            {/* Increased padding */}
-            <Link href="/" className="flex items-center space-x-4.5 py-6">
-              {" "}
-              {/* Increased spacing and padding */}
-              <CatPawLogo />
-              <span className="text-[#cba6f7] text-2xl font-bold">
-                {" "}
-                {/* Increased from text-3xl */}
-                Catalyze
-              </span>
-            </Link>
-          </div>
+        <nav className="fixed top-0 left-0 right-0 bg-[#1c1c2b] z-50 flex justify-between items-center px-6">
+          <Link href="/" className="flex items-center space-x-4.5 py-6">
+            <CatPawLogo />
+            <span className="text-[#cba6f7] text-2xl font-bold">Catalyze</span>
+          </Link>
+          <UserButton
+            appearance={{
+              elements: {
+                userButtonAvatarBox: "w-8 h-8 rounded-full",
+              },
+            }}
+          />{" "}
+          {/* Configure UserButton appearance */}
         </nav>
 
         {/* Main Content */}

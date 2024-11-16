@@ -25,7 +25,7 @@ export default function RootLayout({
         <body className={inter.className}>
           <ThemeProvider>
             <div className="min-h-screen">
-              <Navigation />
+              {/* <Navigation /> */}
               <main>{children}</main>
               <Toaster position="top-right" />
             </div>

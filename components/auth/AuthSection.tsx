@@ -19,9 +19,17 @@ export const AuthSection = ({
   >
     <div className="w-full max-w-md">
       {authMode === "login" ? (
-        <SignIn appearance={clerkAppearance} redirectUrl="/" routing="hash" />
+        <SignIn
+          appearance={clerkAppearance}
+          redirectUrl="/dashboard"
+          routing="hash"
+        />
       ) : (
-        <SignUp appearance={clerkAppearance} redirectUrl="/" routing="hash" />
+        <SignUp
+          appearance={clerkAppearance}
+          redirectUrl="/dashboard"
+          routing="hash"
+        />
       )}
     </div>
   </motion.div>

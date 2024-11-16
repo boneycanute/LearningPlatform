@@ -16,6 +16,10 @@ export default clerkMiddleware(async (auth, req) => {
   if (isProtectedRoute(req)) {
     await auth.protect();
   }
+  // Allow public routes to be accessed without authentication
+  if (isPublicRoute(req)) {
+    return;
+  }
 });
 
 export const config = {
