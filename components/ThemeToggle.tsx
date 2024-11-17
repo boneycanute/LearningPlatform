@@ -32,15 +32,18 @@ export function ThemeToggle() {
       <DropdownMenuTrigger asChild>
         <Button
           variant="ghost"
-          size="icon"
-          className="gap-2 px-2 py-1"
-          style={{ width: "fit-content" }}
+          className="w-full h-14 relative flex items-center group"
         >
-          {themeIcons[theme]}
-          <span className="hidden md:inline-block">{themeNames[theme]}</span>
+          <span className="absolute left-20 flex items-start overflow-hidden whitespace-nowrap transition-all duration-300">
+            Appearance
+          </span>
         </Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent align="end" className="py-2 px-4 bg-background">
+      <DropdownMenuContent
+        align="end"
+        className="py-2 px-4 bg-background ml-4"
+        style={{ minWidth: "200px" }}
+      >
         <DropdownMenuItem onClick={() => setTheme("latte")}>
           <Sun className="mr-2 h-4 w-4" />
           <span>Latte</span>

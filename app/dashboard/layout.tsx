@@ -18,9 +18,12 @@ import {
   Swords,
   Sun,
   Moon,
+  Settings,
+  Palette,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useTheme } from "next-themes";
+import { ThemeToggle } from "@/components/ThemeToggle";
 
 const SIDEBAR_WIDTH = "240px";
 const COLLAPSED_WIDTH = "80px";
@@ -72,15 +75,15 @@ const Sidebar = () => {
 
         {/* Navigation Items */}
         <ScrollArea className="flex-1">
-          <div className="flex flex-col gap-1">
+          <div className="flex flex-col gap-1 flex-1">
             {/* Dashboard */}
             <Link href="/dashboard">
               <Button
                 variant="ghost"
-                className="w-full h-14 relative flex items-center"
+                className="w-full h-14 relative flex items-center group"
               >
                 <div className="absolute left-[20px]">
-                  <LayoutDashboard className="h-6 w-6 text-[#fab387]" />
+                  <LayoutDashboard className="h-8 w-8 text-[#fab387] group-hover:text-black" />
                 </div>
                 <span
                   className="absolute left-20 flex items-start overflow-hidden whitespace-nowrap transition-all duration-300 pr-4"
@@ -102,10 +105,10 @@ const Sidebar = () => {
               <CollapsibleTrigger asChild>
                 <Button
                   variant="ghost"
-                  className="w-full h-14 relative flex items-center"
+                  className="w-full h-14 relative flex items-center group"
                 >
                   <div className="absolute left-[20px]">
-                    <BookOpen className="h-6 w-6 text-[#fab387]" />
+                    <BookOpen className="h-6 w-6 text-[#fab387] group-hover:text-black" />
                   </div>
                   {isExpanded && (
                     <div className="absolute left-20 flex items-start justify-between w-[160px]">
@@ -138,10 +141,10 @@ const Sidebar = () => {
             <Link href="/dashboard/quests">
               <Button
                 variant="ghost"
-                className="w-full h-14 relative flex items-center"
+                className="w-full h-14 relative flex items-center group"
               >
                 <div className="absolute left-[20px]">
-                  <Swords className="h-6 w-6 text-[#fab387]" />
+                  <Swords className="h-6 w-6 text-[#fab387] group-hover:text-black" />
                 </div>
                 <span
                   className="absolute left-20 flex items-start overflow-hidden whitespace-nowrap transition-all duration-300 pr-4"
@@ -159,10 +162,10 @@ const Sidebar = () => {
             <Link href="/dashboard/achievements">
               <Button
                 variant="ghost"
-                className="w-full h-14 relative flex items-center"
+                className="w-full h-14 relative flex items-center group"
               >
                 <div className="absolute left-[20px]">
-                  <Trophy className="h-6 w-6 text-[#fab387]" />
+                  <Trophy className="h-6 w-6 text-[#fab387] group-hover:text-black" />
                 </div>
                 <span
                   className="absolute left-20 flex items-start overflow-hidden whitespace-nowrap transition-all duration-300 pr-4"
@@ -176,39 +179,30 @@ const Sidebar = () => {
               </Button>
             </Link>
           </div>
+
+          {/* Theme Toggle */}
+          <div className="w-full h-14 relative flex items-center">
+            <div className="absolute left-[14px]">
+              <Palette className="h-5 w-5 text-[#fab387] group-hover:text-black" />
+            </div>
+            <div className="absolute w-full">
+              <ThemeToggle />
+            </div>
+          </div>
         </ScrollArea>
 
         {/* Footer */}
-        <div className="h-16 border-t border-[#fab387]/10 flex items-center relative">
-          <div className="absolute left-[20px]">
-            <UserButton
-              appearance={{
-                // baseTheme: {},
-                elements: {
-                  avatarBox: "w-8 h-8",
-                  userButtonPopoverCard: "right-0 mt-2 border-none",
-                  userButtonOuterIdentifier: "text-white",
-                  userButtonPopoverFooter: "hidden",
-                },
-              }}
-            />
-          </div>
-
-          {isExpanded && (
-            <div className="absolute right-4">
-              <Button
-                variant="ghost"
-                size="icon"
-                onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-              >
-                {theme === "dark" ? (
-                  <Sun className="h-6 w-6 text-[#fab387]" />
-                ) : (
-                  <Moon className="h-6 w-6 text-[#fab387]" />
-                )}
-              </Button>
-            </div>
-          )}
+        <div className="h-16 border-t border-[#fab387]/10 flex items-center px-4">
+          <UserButton
+            appearance={{
+              elements: {
+                avatarBox: "w-8 h-8",
+                userButtonPopoverCard: "right-0 mt-2 border-none",
+                userButtonOuterIdentifier: "text-white",
+                userButtonPopoverFooter: "hidden",
+              },
+            }}
+          />
         </div>
       </div>
     </div>
