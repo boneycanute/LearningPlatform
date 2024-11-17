@@ -34,7 +34,9 @@ export default function CourseList({ courses }: CourseListProps) {
                 {course.lessonIds.length} Lessons
               </div>
               <Button asChild>
-                <Link href={`/courses/${course.courseId}`}>Start Learning</Link>
+                <Link href={`/dashboard/courses/${course.courseId}`}>
+                  Start Learning
+                </Link>
               </Button>
             </div>
           </CardContent>

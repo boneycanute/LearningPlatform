@@ -56,7 +56,7 @@ export default function CourseView({ course, lessons }: CourseViewProps) {
                   ))}
                 </div>
                 <Button asChild>
-                  <Link href={`/lessons/${lesson.lessonId}`}>
+                  <Link href={`/dashboard/lessons/${lesson.lessonId}`}>
                     Start Lesson
                     <ChevronRight className="ml-2 h-4 w-4" />
                   </Link>

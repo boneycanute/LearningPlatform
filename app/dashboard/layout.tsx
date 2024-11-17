@@ -1,5 +1,5 @@
 "use client";
-import { ReactNode, useState } from "react";
+import { ReactNode, useState, useEffect } from "react";
 import Link from "next/link";
 import { UserButton } from "@clerk/nextjs";
 import { Button } from "@/components/ui/button";
@@ -16,9 +16,6 @@ import {
   Trophy,
   ChevronDown,
   Swords,
-  Sun,
-  Moon,
-  Settings,
   Palette,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -28,16 +25,25 @@ import { ThemeToggle } from "@/components/ThemeToggle";
 const SIDEBAR_WIDTH = "240px";
 const COLLAPSED_WIDTH = "80px";
 
+type Course = {
+  courseId: string;
+  courseName: string;
+};
+
 const Sidebar = () => {
   const [isExpanded, setIsExpanded] = useState(false);
   const [isCoursesOpen, setIsCoursesOpen] = useState(false);
   const { theme, setTheme } = useTheme();
+  const [courses, setCourses] = useState<Course[]>([]);
 
-  const courses = [
-    { name: "Blockchain Basics", href: "/dashboard/courses/blockchain-basics" },
-    { name: "Smart Contracts", href: "/dashboard/courses/smart-contracts" },
-    { name: "DeFi Fundamentals", href: "/dashboard/courses/defi" },
-  ];
+  useEffect(() => {
+    const fetchCourses = async () => {
+      const response = await fetch("/api/courses");
+      const data = await response.json();
+      setCourses(data);
+    };
+    fetchCourses();
+  }, []);
 
   const handleMouseLeave = () => {
     setIsExpanded(false);
@@ -125,12 +131,17 @@ const Sidebar = () => {
               </CollapsibleTrigger>
               <CollapsibleContent>
                 {courses.map((course) => (
-                  <Link key={course.href} href={course.href}>
+                  <Link
+                    key={course.courseId}
+                    href={`/dashboard/courses/${course.courseId}`}
+                  >
                     <Button
                       variant="ghost"
                       className="w-full h-12 relative flex items-center pl-20 text-sm hover:bg-[#fab387]/10"
                     >
-                      <span className="absolute left-20">{course.name}</span>
+                      <span className="absolute left-20">
+                        {course.courseName}
+                      </span>
                     </Button>
                   </Link>
                 ))}

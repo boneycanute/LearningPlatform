@@ -11,7 +11,6 @@ interface LessonPageProps {
 export default async function LessonPage({ params }: LessonPageProps) {
   try {
     const lesson = await getLesson(params.lessonId);
-
     return (
       <div className="container mx-auto p-6">
         <LessonViewer lesson={lesson} />
