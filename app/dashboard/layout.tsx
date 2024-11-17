@@ -183,17 +183,7 @@ const Sidebar = () => {
           <div className="absolute left-[20px]">
             <UserButton
               appearance={{
-                baseTheme: {
-                  colors: {
-                    primary: "#fab387",
-                  },
-                  elements: {
-                    card: "bg-[#1c1c2b] border-none shadow-xl",
-                    headerTitle: "text-white",
-                    headerSubtitle: "text-[#fab387]",
-                    dividerLine: "bg-gray-800",
-                  },
-                },
+                // baseTheme: {},
                 elements: {
                   avatarBox: "w-8 h-8",
                   userButtonPopoverCard: "right-0 mt-2 border-none",
